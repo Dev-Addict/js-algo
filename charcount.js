@@ -1,4 +1,4 @@
-const charcount = (string) => {
+const charCount = (string) => {
     const result = {};
     for (let s of string) {
         if (result.hasOwnProperty(s))
@@ -9,4 +9,4 @@ const charcount = (string) => {
     return result;
 };
 
-console.log(charcount("Hello my name is Aria"));
+console.log(charCount("Hello my name is Aria"));
