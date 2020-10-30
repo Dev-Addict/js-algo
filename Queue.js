@@ -5,27 +5,27 @@ class Node {
     }
 }
 
-class Stack {
+class Queue {
     constructor() {
         this.first = null;
         this.last = null;
         this.size = 0;
     }
 
-    push(val) {
+    enqueue(val) {
         const node = new Node(val);
 
         if (!this.first)
             this.first = this.last = node;
         else {
-            node.next = this.first;
-            this.first = node;
+            this.last.next = node;
+            this.last = node;
         }
 
         this.size++;
     }
 
-    pop() {
+    dequeue() {
         if (!this.first) return null;
         if (this.size === 1) this.last = null;
 
