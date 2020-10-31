@@ -60,14 +60,3 @@ class BinarySearchTree {
         return [...this.depthFirstSearchInOrder(node.left), node.val, ...this.depthFirstSearchInOrder(node.right)];
     }
 }
-
-const binarySearchTree = new BinarySearchTree();
-
-binarySearchTree.insert(10);
-binarySearchTree.insert(6);
-binarySearchTree.insert(15);
-binarySearchTree.insert(3);
-binarySearchTree.insert(8);
-binarySearchTree.insert(20);
-
-console.log(binarySearchTree.depthFirstSearchInOrder());
