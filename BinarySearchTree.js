@@ -54,6 +54,11 @@ class BinarySearchTree {
         if (!node) return [];
         return [...this.depthFirstSearchPostOrder(node.left), ...this.depthFirstSearchPostOrder(node.right), node.val];
     }
+
+    depthFirstSearchInOrder(node = this.root) {
+        if (!node) return [];
+        return [...this.depthFirstSearchInOrder(node.left), node.val, ...this.depthFirstSearchInOrder(node.right)];
+    }
 }
 
 const binarySearchTree = new BinarySearchTree();
