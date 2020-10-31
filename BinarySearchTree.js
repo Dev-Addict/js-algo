@@ -27,4 +27,32 @@ class BinarySearchTree {
         if (node.val === val) return true;
         return this.find(val, node.val > val ? node.left : node.right);
     }
+
+    breadthFirstSearch() {
+        const data = [],
+            queue = [];
+
+        queue.push(this.root);
+
+        while (queue.length) {
+            const node = queue.shift();
+            data.push(node.val);
+
+            if (node.left) queue.push(node.left);
+            if (node.right) queue.push(node.right);
+        }
+
+        return data;
+    }
 }
+
+const binarySearchTree = new BinarySearchTree();
+
+binarySearchTree.insert(10);
+binarySearchTree.insert(6);
+binarySearchTree.insert(15);
+binarySearchTree.insert(3);
+binarySearchTree.insert(8);
+binarySearchTree.insert(20);
+
+console.log(binarySearchTree.breadthFirstSearch());
