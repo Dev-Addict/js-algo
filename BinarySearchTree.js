@@ -49,6 +49,11 @@ class BinarySearchTree {
         if (!node) return [];
         return [node.val, ...this.depthFirstSearchPreOrder(node.left), ...this.depthFirstSearchPreOrder(node.right)];
     }
+
+    depthFirstSearchPostOrder(node = this.root) {
+        if (!node) return [];
+        return [...this.depthFirstSearchPostOrder(node.left), ...this.depthFirstSearchPostOrder(node.right), node.val];
+    }
 }
 
 const binarySearchTree = new BinarySearchTree();
@@ -60,4 +65,4 @@ binarySearchTree.insert(3);
 binarySearchTree.insert(8);
 binarySearchTree.insert(20);
 
-console.log(binarySearchTree.depthFirstSearchPreOrder());
+console.log(binarySearchTree.depthFirstSearchInOrder());
